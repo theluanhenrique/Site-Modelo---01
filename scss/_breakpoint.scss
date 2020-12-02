@@ -1,0 +1,32 @@
+/* ***********************************************
+* Mixin - Breakpoints 
+*
+* Direitos - https://css-tricks.com/conditional-media-query-mixins/
+*
+* *********************************************** */
+
+@mixin bp($point) {
+  
+    $bp-xsmall: "(max-width: 320px)";
+    $bp-small: "(max-width: 768px)";
+    $bp-medium: "(max-width: 1024px)";
+    $bp-large: "(max-width: 1300px)";
+    $bp-xlarge: "(max-width: 1600px)";
+  
+    @if $point == bp-x-large {
+      @media #{$bp-xlarge} { @content; }
+    }
+    @else if $point == bp-large {
+      @media #{$bp-large} { @content; }
+    }
+    @else if $point == bp-medium {
+      @media #{$bp-medium}  { @content; }
+    }
+    @else if $point == bp-small {
+        @media #{$bp-small} { @content; }
+    }
+    @else if $point == bp-xsmall {
+        @media #{$bp-xsmall} { @content; }
+    }
+  
+  }
